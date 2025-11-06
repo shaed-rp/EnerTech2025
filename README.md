@@ -2,6 +2,8 @@
 
 A modern, performant landing page for SHAED's EnerTech Forum 2025 presentation, showcasing the unified platform for commercial vehicle procurement.
 
+> Last updated: Deployment configuration optimized for Vercel static hosting.
+
 ## 🚀 Features
 
 - **Modern Stack**: Built with React 18, TypeScript, Vite, and Tailwind CSS
