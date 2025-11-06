@@ -35,7 +35,7 @@ async function startServer() {
   });
 
   // Handle client-side routing - serve index.html for all routes
-  app.get("*", (req, res, next) => {
+  app.get("*", (req, res) => {
     const indexPath = path.join(staticPath, "index.html");
     
     // Check if file exists, otherwise send 404

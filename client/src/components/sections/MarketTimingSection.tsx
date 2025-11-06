@@ -38,16 +38,16 @@ const timingStats: TimingStat[] = [
 
 export default function MarketTimingSection() {
   return (
-    <section className="py-20 px-6 bg-muted/30" aria-labelledby="timing-heading">
+    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-muted/30" aria-labelledby="timing-heading">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 id="timing-heading" className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 id="timing-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Perfect Market Timing
           </h2>
-          <p className="text-xl text-muted-foreground">Three powerful tailwinds accelerating adoption</p>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Three powerful tailwinds accelerating adoption</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {timingStats.map((stat) => (
             <Card key={stat.title}>
               <CardContent className="pt-6">

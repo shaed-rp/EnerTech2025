@@ -8,11 +8,11 @@ interface Result {
 
 const results: Result[] = [
   {
-    title: "DTT Improvement: 230 → 195 days",
-    description: "15% reduction (35-day improvement)",
+    title: "DTT Improvement: 202 → 190 days",
+    description: "6% reduction (12-day improvement)",
   },
   {
-    title: "49,993 documents processed",
+    title: "78,993 documents processed",
     description: "98.9% automation success rate",
   },
   {
@@ -29,30 +29,30 @@ const roiBreakdown = [
 
 export default function ROISection() {
   return (
-    <section id="roi" className="py-20 px-6" aria-labelledby="roi-heading">
+    <section id="roi" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6" aria-labelledby="roi-heading">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 id="roi-heading" className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 id="roi-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Proven ROI
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">
             Real results from beta deployment with multi-location commercial dealer group
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
           <div>
             <Card className="bg-card border-2 border-primary/20 rounded-2xl">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-6">Beta Dealer Profile</h3>
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Beta Dealer Profile</h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Annual Volume</span>
                     <span className="font-semibold">35,000+ units</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Average Inventory</span>
-                    <span className="font-semibold">$52M</span>
+                    <span className="text-muted-foreground">Floorplan Line Managed</span>
+                    <span className="font-semibold">$380M</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Starting DTT</span>
@@ -67,9 +67,9 @@ export default function ROISection() {
             </Card>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 mt-8 md:mt-0">
             <div>
-              <h3 className="text-xl font-bold mb-4">Results After 6 Months</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-4">Results After 6 Months</h3>
               <div className="space-y-4" role="list">
                 {results.map((result) => (
                   <div key={result.title} className="flex items-center gap-3" role="listitem">
@@ -83,8 +83,8 @@ export default function ROISection() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 p-6 rounded-2xl border-2 border-primary">
-              <h4 className="font-bold text-lg mb-4">Total Annual ROI</h4>
+            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 p-5 sm:p-6 rounded-2xl border-2 border-primary">
+              <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Total Annual ROI</h4>
               <div className="space-y-2 text-sm mb-4" role="list">
                 {roiBreakdown.map((item) => (
                   <div key={item.label} className="flex justify-between" role="listitem">
@@ -94,11 +94,11 @@ export default function ROISection() {
                 ))}
               </div>
               <div className="pt-4 border-t-2 border-primary/30">
-                <div className="flex justify-between items-center">
-                  <span className="font-bold text-lg">Total Impact</span>
-                  <span className="text-3xl font-bold text-primary">$2.42M</span>
+                <div className="flex justify-between items-center flex-wrap gap-2">
+                  <span className="font-bold text-base sm:text-lg">Total Impact</span>
+                  <span className="text-2xl sm:text-3xl font-bold text-primary">$2.42M</span>
                 </div>
-                <div className="text-sm text-muted-foreground mt-2">Payback period: 8.2 months</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-2">Payback period: 8.2 months</div>
               </div>
             </div>
           </div>

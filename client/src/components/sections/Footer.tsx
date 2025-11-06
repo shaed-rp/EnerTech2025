@@ -13,22 +13,29 @@ const sources: Source[] = [
 
 export default function Footer() {
   return (
-    <footer className="py-12 px-6 border-t border-border" role="contentinfo">
+    <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-border" role="contentinfo">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-4">
-            <a href="/" aria-label="SHAED Home">
-              <img src="/shaed-logo.png" alt="SHAED" className="h-8" />
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
+            <a href="/" aria-label="SHAED Home" className="focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">
+              <img 
+                src="/shaed-logo.png" 
+                alt="SHAED" 
+                className="h-7 sm:h-8" 
+                loading="lazy"
+                width="120"
+                height="32"
+              />
             </a>
-            <span className="text-sm text-muted-foreground">© 2025 SHAED. All rights reserved.</span>
+            <span className="text-xs sm:text-sm text-muted-foreground">© 2025 SHAED. All rights reserved.</span>
           </div>
-          <div className="text-sm text-muted-foreground">
-            Simplifying the future of electric mobility
+          <div className="text-xs sm:text-sm text-muted-foreground text-center sm:text-right">
+            Simplifying the future of commercial mobility
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-border">
-          <h4 className="text-sm font-semibold mb-4">Sources</h4>
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border">
+          <h4 className="text-xs sm:text-sm font-semibold mb-3 sm:mb-4">Sources</h4>
           <div className="text-xs text-muted-foreground space-y-1" role="list">
             {sources.map((source) => (
               <div key={source.number} role="listitem">

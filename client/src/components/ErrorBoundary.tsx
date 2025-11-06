@@ -23,13 +23,23 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    // Log error to console in development
+    // Log error details
+    const errorDetails = {
+      error: {
+        name: error.name,
+        message: error.message,
+        stack: error.stack,
+      },
+      componentStack: errorInfo.componentStack,
+    };
+
+    // In development, log to console
     if (import.meta.env.DEV) {
-      console.error("ErrorBoundary caught an error:", error, errorInfo);
+      console.error("ErrorBoundary caught an error:", errorDetails);
     }
 
     // In production, you could log to an error reporting service here
-    // Example: logErrorToService(error, errorInfo);
+    // Example: errorTrackingService.captureException(error, { extra: errorInfo });
 
     this.setState({ errorInfo });
   }

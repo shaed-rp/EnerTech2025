@@ -38,18 +38,18 @@ const marketStats: MarketStat[] = [
 
 export default function MarketOpportunity() {
   return (
-    <section id="opportunity" className="py-20 px-6 bg-muted/30" aria-labelledby="market-heading">
+    <section id="opportunity" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-muted/30" aria-labelledby="market-heading">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 id="market-heading" className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 id="market-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Massive Market Opportunity
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">
             Addressing a critical inefficiency in a high-growth industry
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {marketStats.map((stat) => (
             <Card key={stat.label} className="border-2 border-primary/20">
               <CardContent className="pt-6">

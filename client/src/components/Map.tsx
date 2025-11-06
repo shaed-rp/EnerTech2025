@@ -97,7 +97,13 @@ export function MapView({
           
           setTimeout(() => clearInterval(checkGoogle), 10000);
         })
-        .catch(error => console.error('Failed to fetch Google Maps script:', error));
+        .catch(error => {
+          // Only log in development to avoid exposing errors in production
+          if (import.meta.env.DEV) {
+            console.error('Failed to fetch Google Maps script:', error);
+          }
+          // Could show user-friendly error message here
+        });
     } else {
       initMap();
     }

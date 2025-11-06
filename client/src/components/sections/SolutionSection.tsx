@@ -32,18 +32,18 @@ const features: Feature[] = [
 
 export default function SolutionSection() {
   return (
-    <section id="solution" className="py-20 px-6 bg-muted/30" aria-labelledby="solution-heading">
+    <section id="solution" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-muted/30" aria-labelledby="solution-heading">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 id="solution-heading" className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 id="solution-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             The SHAED Platform
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             A unified operating system for commercial mobility that eliminates fragmentation and unlocks efficiency across the entire procurement ecosystem
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {features.map((feature) => (
             <Card key={feature.title}>
               <CardContent className="pt-6">
@@ -57,9 +57,9 @@ export default function SolutionSection() {
           ))}
         </div>
 
-        <div className="mt-12 p-8 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl border-2 border-primary/20">
-          <h3 className="text-2xl font-bold mb-4">Competitive Moat</h3>
-          <p className="text-lg">
+        <div className="mt-8 sm:mt-12 p-6 sm:p-8 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl border-2 border-primary/20">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Competitive Moat</h3>
+          <p className="text-base sm:text-lg">
             SHAED is the <span className="font-bold text-primary">only platform</span> that unifies OEMs, dealers, upfitters, and fleet buyers in a single procurement operating system. Competitors solve point problems—we eliminate the entire inefficiency.
           </p>
         </div>

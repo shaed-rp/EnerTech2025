@@ -41,25 +41,25 @@ const dealerMetrics = [
 
 export default function ProblemSection() {
   return (
-    <section className="py-20 px-6" aria-labelledby="problem-heading">
+    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6" aria-labelledby="problem-heading">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
           <div>
-            <h2 id="problem-heading" className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 id="problem-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               A Broken Ecosystem
             </h2>
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6">
               Commercial vehicle procurement operates through 8-12 disconnected systems, creating severe operational and financial pressure on dealers operating on razor-thin 1-2% net margins.
             </p>
             <div className="space-y-4" role="list">
               {problems.map((problem) => (
                 <div key={problem.title} className="flex items-start gap-3" role="listitem">
-                  <div className="mt-1 p-2 rounded-lg bg-destructive/10" aria-hidden="true">
+                  <div className="mt-1 p-2 rounded-lg bg-destructive/10 flex-shrink-0" aria-hidden="true">
                     {problem.icon}
                   </div>
-                  <div>
-                    <div className="font-semibold">{problem.title}</div>
-                    <div className="text-sm text-muted-foreground">
+                  <div className="min-w-0">
+                    <div className="font-semibold text-sm sm:text-base">{problem.title}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">
                       {problem.description}
                       {problem.source && (
                         <sup className="text-primary ml-1">
@@ -81,8 +81,8 @@ export default function ProblemSection() {
             </div>
           </div>
 
-          <div className="bg-muted/50 p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold mb-6">For a mid-sized dealer:</h3>
+          <div className="bg-muted/50 p-6 sm:p-8 rounded-2xl mt-8 md:mt-0">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">For a mid-sized dealer:</h3>
             <div className="space-y-4" role="list">
               {dealerMetrics.map((metric, index) => (
                 <div

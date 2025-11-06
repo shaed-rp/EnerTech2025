@@ -15,16 +15,16 @@ const tractionStats: TractionStat[] = [
 
 export default function TractionSection() {
   return (
-    <section id="traction" className="py-20 px-6" aria-labelledby="traction-heading">
+    <section id="traction" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6" aria-labelledby="traction-heading">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 id="traction-heading" className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 id="traction-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Current Traction
           </h2>
-          <p className="text-xl text-muted-foreground">Building momentum with industry leaders</p>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Building momentum with industry leaders</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {tractionStats.map((stat) => (
             <Card key={stat.label} className="text-center">
               <CardContent className="pt-6">
@@ -35,12 +35,12 @@ export default function TractionSection() {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-2xl border-2 border-primary/20">
-          <div className="flex items-start gap-4">
-            <Users className="h-8 w-8 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-6 sm:p-8 rounded-2xl border-2 border-primary/20">
+          <div className="flex items-start gap-3 sm:gap-4">
+            <Users className="h-6 w-6 sm:h-8 sm:w-8 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
             <div>
-              <h3 className="text-xl font-bold mb-2">Network Effects in Action</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg sm:text-xl font-bold mb-2">Network Effects in Action</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
                 SHAED becomes more valuable as more participants join. Each new OEM, upfitter, or dealer strengthens the platform for all users—creating a powerful moat that competitors cannot easily replicate.
               </p>
             </div>
