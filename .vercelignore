@@ -1,0 +1,12 @@
+# Ignore server files - Vercel will use static hosting
+server/
+dist/index.js
+
+# Development files
+node_modules/
+.env.local
+.env.*.local
+
+# Build artifacts (except dist/public)
+dist/index.js
+
