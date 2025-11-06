@@ -43,23 +43,31 @@ export default function ProblemSection() {
   return (
     <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6" aria-labelledby="problem-heading">
       <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-8 sm:mb-12 md:hidden">
+          <h2 id="problem-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+            A Broken Ecosystem
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">
+            Commercial vehicle procurement operates through 8-12 disconnected systems, creating severe operational and financial pressure on dealers operating on razor-thin 1-2% net margins.
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
           <div>
-            <h2 id="problem-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+            <h2 id="problem-heading-desktop" className="hidden md:block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               A Broken Ecosystem
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground mb-6">
+            <p className="hidden md:block text-base sm:text-lg text-muted-foreground mb-6">
               Commercial vehicle procurement operates through 8-12 disconnected systems, creating severe operational and financial pressure on dealers operating on razor-thin 1-2% net margins.
             </p>
-            <div className="space-y-4" role="list">
+            <div className="space-y-4 sm:space-y-5" role="list">
               {problems.map((problem) => (
-                <div key={problem.title} className="flex items-start gap-3" role="listitem">
-                  <div className="mt-1 p-2 rounded-lg bg-destructive/10 flex-shrink-0" aria-hidden="true">
+                <div key={problem.title} className="flex items-start gap-3 sm:gap-4" role="listitem">
+                  <div className="mt-0.5 sm:mt-1 p-2 rounded-lg bg-destructive/10 flex-shrink-0" aria-hidden="true">
                     {problem.icon}
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-semibold text-sm sm:text-base">{problem.title}</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-semibold text-sm sm:text-base mb-1">{problem.title}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                       {problem.description}
                       {problem.source && (
                         <sup className="text-primary ml-1">
@@ -81,25 +89,25 @@ export default function ProblemSection() {
             </div>
           </div>
 
-          <div className="bg-muted/50 p-6 sm:p-8 rounded-2xl mt-8 md:mt-0">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">For a mid-sized dealer:</h3>
-            <div className="space-y-4" role="list">
+          <div className="bg-muted/50 p-6 sm:p-8 rounded-2xl border border-border mt-8 md:mt-0">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6">For a mid-sized dealer:</h3>
+            <div className="space-y-3 sm:space-y-4" role="list">
               {dealerMetrics.map((metric, index) => (
                 <div
                   key={metric.label}
-                  className={`flex justify-between items-center ${
-                    index < dealerMetrics.length - 1 ? "pb-2 border-b border-border" : "pt-2"
+                  className={`flex justify-between items-center gap-2 ${
+                    index < dealerMetrics.length - 1 ? "pb-3 sm:pb-4 border-b border-border" : "pt-2"
                   }`}
                   role="listitem"
                 >
-                  <span className="text-muted-foreground">{metric.label}</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">{metric.label}</span>
                   <span
-                    className={`font-semibold ${
+                    className={`font-semibold text-right ${
                       metric.total
-                        ? "text-2xl font-bold text-destructive"
+                        ? "text-xl sm:text-2xl font-bold text-destructive"
                         : metric.highlight
-                        ? "text-destructive"
-                        : ""
+                        ? "text-destructive text-sm sm:text-base"
+                        : "text-sm sm:text-base"
                     }`}
                   >
                     {metric.value}

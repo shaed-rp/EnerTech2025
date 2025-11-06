@@ -1,7 +1,30 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Download, Loader2 } from "lucide-react";
 
 export default function CTASection() {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownloadSlides = async () => {
+    setIsDownloading(true);
+    try {
+      // Create a temporary anchor element to trigger download
+      const link = document.createElement("a");
+      link.href = "/SHAED-EnerTech-Forum-2025.pdf";
+      link.download = "SHAED - EnerTech Forum 2025.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Small delay to show loading state
+      await new Promise(resolve => setTimeout(resolve, 300));
+    } catch (error) {
+      console.error("Failed to download slides:", error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
     <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/10" aria-labelledby="cta-heading">
       <div className="container mx-auto max-w-4xl text-center">
@@ -12,12 +35,32 @@ export default function CTASection() {
           Join us in transforming the commercial vehicle procurement industry
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto min-h-[44px]">
-            Request Full Deck
-            <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto min-h-[44px] disabled:opacity-70 disabled:cursor-not-allowed"
+            onClick={handleDownloadSlides}
+            disabled={isDownloading}
+            aria-busy={isDownloading}
+          >
+            {isDownloading ? (
+              <>
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" aria-hidden="true" />
+                Downloading...
+              </>
+            ) : (
+              <>
+                Download Slides
+                <Download className="ml-2 h-5 w-5" aria-hidden="true" />
+              </>
+            )}
           </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[44px]">
-            Schedule Meeting
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="w-full sm:w-auto min-h-[44px]"
+            onClick={() => window.open("https://open.spotify.com/episode/0Au6bCGPPfZX2igf9SauCe?si=SwH0Tuo4RU6_sRbRLIIv2Q", "_blank", "noopener,noreferrer")}
+          >
+            Listen to Podcast
           </Button>
         </div>
       </div>

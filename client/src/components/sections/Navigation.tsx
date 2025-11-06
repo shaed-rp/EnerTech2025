@@ -32,18 +32,18 @@ export default function Navigation({ onNavigate }: NavigationProps) {
               height="32"
             />
           </a>
-          <div className="hidden md:flex gap-6 items-center">
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => onNavigate(item.id)}
-                className="text-sm hover:text-primary transition-colors whitespace-nowrap py-2"
-                aria-label={`Navigate to ${item.label} section`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+              <div className="hidden md:flex gap-6 items-center">
+                {NAV_ITEMS.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => onNavigate(item.id)}
+                    className="text-sm hover:text-primary transition-colors whitespace-nowrap py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 -mx-2"
+                    aria-label={`Navigate to ${item.label} section`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
           <div className="flex items-center gap-3">
             <div className="hidden md:block">
               <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">

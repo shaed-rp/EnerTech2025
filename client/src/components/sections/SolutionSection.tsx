@@ -45,21 +45,21 @@ export default function SolutionSection() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {features.map((feature) => (
-            <Card key={feature.title}>
-              <CardContent className="pt-6">
-                <div className="p-3 rounded-lg bg-primary/10 w-fit mb-4" aria-hidden="true">
+            <Card key={feature.title} className="hover:shadow-md transition-shadow">
+              <CardContent className="pt-6 pb-6">
+                <div className="p-2.5 sm:p-3 rounded-lg bg-primary/10 w-fit mb-3 sm:mb-4" aria-hidden="true">
                   {feature.icon}
                 </div>
-                <h3 className="font-bold text-lg mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">{feature.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
         <div className="mt-8 sm:mt-12 p-6 sm:p-8 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl border-2 border-primary/20">
-          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Competitive Moat</h3>
-          <p className="text-base sm:text-lg">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4">Competitive Moat</h3>
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed">
             SHAED is the <span className="font-bold text-primary">only platform</span> that unifies OEMs, dealers, upfitters, and fleet buyers in a single procurement operating system. Competitors solve point problems—we eliminate the entire inefficiency.
           </p>
         </div>

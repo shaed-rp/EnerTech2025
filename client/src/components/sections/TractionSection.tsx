@@ -26,10 +26,10 @@ export default function TractionSection() {
 
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {tractionStats.map((stat) => (
-            <Card key={stat.label} className="text-center">
-              <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+            <Card key={stat.label} className="text-center hover:shadow-md transition-shadow">
+              <CardContent className="pt-6 pb-6">
+                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed px-1">{stat.label}</div>
               </CardContent>
             </Card>
           ))}
@@ -37,10 +37,10 @@ export default function TractionSection() {
 
         <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-6 sm:p-8 rounded-2xl border-2 border-primary/20">
           <div className="flex items-start gap-3 sm:gap-4">
-            <Users className="h-6 w-6 sm:h-8 sm:w-8 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
-            <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2">Network Effects in Action</h3>
-              <p className="text-sm sm:text-base text-muted-foreground">
+            <Users className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-primary flex-shrink-0 mt-0.5 sm:mt-1" aria-hidden="true" />
+            <div className="min-w-0 flex-1">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3">Network Effects in Action</h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 SHAED becomes more valuable as more participants join. Each new OEM, upfitter, or dealer strengthens the platform for all users—creating a powerful moat that competitors cannot easily replicate.
               </p>
             </div>

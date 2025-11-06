@@ -42,7 +42,7 @@ export default function ROISection() {
 
         <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
           <div>
-            <Card className="bg-card border-2 border-primary/20 rounded-2xl">
+            <Card className="bg-card border-2 border-primary/20 rounded-2xl hover:shadow-md transition-shadow">
               <CardContent className="p-6 sm:p-8">
                 <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Beta Dealer Profile</h3>
                 <div className="space-y-3 text-sm">
@@ -67,38 +67,38 @@ export default function ROISection() {
             </Card>
           </div>
 
-          <div className="space-y-6 mt-8 md:mt-0">
+          <div className="space-y-6 sm:space-y-8 mt-8 md:mt-0">
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-4">Results After 6 Months</h3>
-              <div className="space-y-4" role="list">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold mb-4 sm:mb-5">Results After 6 Months</h3>
+              <div className="space-y-4 sm:space-y-5" role="list">
                 {results.map((result) => (
-                  <div key={result.title} className="flex items-center gap-3" role="listitem">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" aria-hidden="true" />
-                    <div>
-                      <div className="font-semibold">{result.title}</div>
-                      <div className="text-sm text-muted-foreground">{result.description}</div>
+                  <div key={result.title} className="flex items-start gap-3 sm:gap-4" role="listitem">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <div className="min-w-0 flex-1">
+                      <div className="font-semibold text-sm sm:text-base mb-1">{result.title}</div>
+                      <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{result.description}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 p-5 sm:p-6 rounded-2xl border-2 border-primary">
-              <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Total Annual ROI</h4>
-              <div className="space-y-2 text-sm mb-4" role="list">
+            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 p-5 sm:p-6 md:p-8 rounded-2xl border-2 border-primary">
+              <h4 className="font-bold text-sm sm:text-base md:text-lg mb-3 sm:mb-4">Total Annual ROI</h4>
+              <div className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm mb-4 sm:mb-5" role="list">
                 {roiBreakdown.map((item) => (
-                  <div key={item.label} className="flex justify-between" role="listitem">
-                    <span>{item.label}</span>
-                    <span className="font-semibold">{item.value}</span>
+                  <div key={item.label} className="flex justify-between items-center gap-2" role="listitem">
+                    <span className="text-muted-foreground">{item.label}</span>
+                    <span className="font-semibold text-foreground">{item.value}</span>
                   </div>
                 ))}
               </div>
-              <div className="pt-4 border-t-2 border-primary/30">
-                <div className="flex justify-between items-center flex-wrap gap-2">
-                  <span className="font-bold text-base sm:text-lg">Total Impact</span>
-                  <span className="text-2xl sm:text-3xl font-bold text-primary">$2.42M</span>
+              <div className="pt-4 sm:pt-5 border-t-2 border-primary/30">
+                <div className="flex justify-between items-center flex-wrap gap-2 sm:gap-3">
+                  <span className="font-bold text-sm sm:text-base md:text-lg">Total Impact</span>
+                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">$2.42M</span>
                 </div>
-                <div className="text-xs sm:text-sm text-muted-foreground mt-2">Payback period: 8.2 months</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-2 sm:mt-3">Payback period: 8.2 months</div>
               </div>
             </div>
           </div>

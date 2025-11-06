@@ -63,7 +63,7 @@ export default function MobileMenu({ onNavigate }: MobileMenuProps) {
           />
           
           {/* Menu */}
-          <div className="fixed top-16 left-0 right-0 bg-background border-b border-border z-50 md:hidden shadow-lg animate-in slide-in-from-top-2 duration-300">
+          <div className="fixed top-[64px] sm:top-[72px] left-0 right-0 bg-background border-b border-border z-50 md:hidden shadow-lg animate-in slide-in-from-top-2 duration-300">
             <nav className="container mx-auto px-4 py-4" role="navigation" aria-label="Mobile navigation">
               <div className="flex flex-col gap-2">
                 {NAV_ITEMS.map((item, index) => (

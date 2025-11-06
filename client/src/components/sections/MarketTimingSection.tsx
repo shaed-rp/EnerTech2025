@@ -49,11 +49,11 @@ export default function MarketTimingSection() {
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {timingStats.map((stat) => (
-            <Card key={stat.title}>
-              <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <h3 className="font-bold text-lg mb-2">{stat.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
+            <Card key={stat.title} className="hover:shadow-md transition-shadow">
+              <CardContent className="pt-6 pb-6">
+                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 sm:mb-3">{stat.value}</div>
+                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">{stat.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {stat.description}
                   {stat.source && (
                     <sup className="text-primary ml-1">
